@@ -16,6 +16,9 @@ export class FlteredDisplayComponent implements OnInit {
     const formattedTime = timeStamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     return formattedTime;
   }
+  public selectRestaurant(name){
+    alert(`you have chosen ${name}`);
+  }
   constructor(public service: DataGetterService) {
     this.service.getData().subscribe(data => {
       this.sampleJson = data.dropoffs;

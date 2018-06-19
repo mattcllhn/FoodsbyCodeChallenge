@@ -22,7 +22,7 @@
               </div>
             </div>
             <div class="info-row">
-              <button type="button" class="select-rest">Select Restaruant</button>
+              <button type="button" class="select-rest" (click) = "selectRestaurant(del.restaurantName)">Select Restaurant</button>
             </div>
             <div class="info-row" *ngIf="del.sellingOut">
               <p class="warning">Hurry! Only a few left!</p>
