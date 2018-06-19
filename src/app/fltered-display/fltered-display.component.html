@@ -1,3 +1,18 @@
-<p>
-  fltered-display works!
-</p>
+
+<ng-container *ngFor = "let item of sampleJson">
+<div *ngIf = "item.day==activeDay" class = "list-wrapper" >
+  <div *ngFor = "let del of item.deliveries" class="list-item">
+    <div class="img-wrapper">
+      <img src="{{del.logoUrl}}" alt="{{del.restaurantName}} logo">
+      <span class="logo-text">{{del.restaurantName}}</span>
+    </div>
+    <div class="info-wrapper">
+
+
+    </div>
+
+  </div>
+
+</div>
+
+</ng-container>

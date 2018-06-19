@@ -7,5 +7,8 @@
     <div class="col-sm-12 text-center">
       <app-date-selector (linkSelected) = "setNewDay($event)"></app-date-selector>
     </div>
+        <div class="col-sm-12">
+           <app-fltered-display [activeDay] = "daySelected"></app-fltered-display>
+        </div>
   </div>
 </div>

@@ -14,6 +14,7 @@ export class DateSelectorComponent implements OnInit {
   public displayDays = [];
   private currentDateObj = new Date(new Date());
   private todayIndex = this.currentDateObj.getDay();
+  public selectedDay = this.daysOfWeek[this.todayIndex];
   // private todayIndex = 4;
   public buildDayArray(numIn){
     let dayIndex = numIn;
@@ -27,10 +28,13 @@ export class DateSelectorComponent implements OnInit {
     }
   }
   public linkSelectEmitter(day){
+    this.selectedDay = day;
     this.linkSelected.emit(day);
   }
   ngOnInit() {
     this.buildDayArray(this.todayIndex);
+    this.linkSelected.emit(this.selectedDay);
+
   }
 
 }

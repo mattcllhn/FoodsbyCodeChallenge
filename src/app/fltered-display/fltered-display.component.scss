@@ -1,0 +1,38 @@
+.list-wrapper{
+    
+.list-item{
+    border-bottom:1px solid black;
+    display:flex;
+    flex-flow:row nowrap;
+    padding:1rem;
+
+    &:last-of-type{
+        border-bottom:none;
+    }
+    &:first-of-type{
+        border-bottom:1px solid black;
+
+    }
+    .img-wrapper{
+        flex:1 0 auto;
+        position:relative;
+        max-width:300px;
+
+        img{
+            opacity:.3;
+            width:auto;
+            height:100%;
+        }
+        span{
+            position:absolute;
+            top:45%;
+            left:0;
+            right:0;
+            text-align:center;            
+        }
+    }
+    .info-wrapper{
+        flex: 3 0 auto;
+    }
+}
+}
