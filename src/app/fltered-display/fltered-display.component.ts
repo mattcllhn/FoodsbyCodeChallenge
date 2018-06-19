@@ -13,7 +13,6 @@ export class FlteredDisplayComponent implements OnInit {
   public sampleJson;
   constructor(public service: DataGetterService) {
     this.service.getData().subscribe(data => {
-      console.log(data);
       this.sampleJson = data.dropoffs;
     });
   }

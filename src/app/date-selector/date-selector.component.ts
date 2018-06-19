@@ -15,7 +15,6 @@ export class DateSelectorComponent implements OnInit {
   private currentDateObj = new Date(new Date());
   private todayIndex = this.currentDateObj.getDay();
   public selectedDay = this.daysOfWeek[this.todayIndex];
-  // private todayIndex = 4;
   public buildDayArray(numIn){
     let dayIndex = numIn;
     for (let i = 0; i < 5; i++) {
