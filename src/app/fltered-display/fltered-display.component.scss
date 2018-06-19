@@ -1,7 +1,8 @@
+@import '../../assets/variables';
 .list-wrapper{
     
 .list-item{
-    border-bottom:1px solid black;
+    border-bottom:1px solid $primary-red;
     display:flex;
     flex-flow:row nowrap;
     padding:1rem;
@@ -10,29 +11,74 @@
         border-bottom:none;
     }
     &:first-of-type{
-        border-bottom:1px solid black;
+        border-bottom:1px solid $primary-red;
 
     }
     .img-wrapper{
         flex:1 0 auto;
         position:relative;
-        max-width:300px;
+        max-width:400px;
+        width:400px;
+        overflow: hidden;
 
         img{
             opacity:.3;
-            width:auto;
-            height:100%;
+            width:100%;
+            height:auto;
         }
         span{
             position:absolute;
             top:45%;
             left:0;
             right:0;
-            text-align:center;            
+            text-align:center;    
+            font-size:1.5rem;        
         }
     }
     .info-wrapper{
         flex: 3 0 auto;
+        padding:1rem 3rem;
+        flex-flow:column nowrap;
+        padding-top:3rem;
+
+        .info-row{
+            margin:1rem 0;
+            display:flex;
+
+            .label{
+                flex:1 0 auto;
+                max-width: 45%;
+            }
+            .time-val{
+                flex:1 0 auto;
+                p{
+                border:1px solid gray;
+                max-width:100px;
+                text-align:center;
+                }
+            }
+            .select-rest{
+                width:100%;
+                background-color:$primary-red;
+                color:white;
+                border:1px solid black;
+                padding:3px;
+            }
+            .warning{
+                width:100%;
+                text-align:center;
+            }
+            &.sold-out{
+                padding-top:4rem;
+                display:flex;
+                flex-flow:column nowrap;
+                margin:auto;
+                text-align:center;
+                max-width:40%;
+                
+            }
+        }
+
     }
 }
 }

@@ -1,3 +1,4 @@
+@import '../../assets/variables';
 .day-selector{
     display:flex;
     flex-flow: row nowrap;
@@ -11,7 +12,7 @@
             margin-bottom:2px;
             border-bottom:2px solid gray;
                 &:hover{
-                border-bottom:2px solid #00a5b3;
+                border-bottom:2px solid $link-green;
                 }
         }
     }

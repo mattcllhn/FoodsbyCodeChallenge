@@ -64,7 +64,7 @@
                     "cutoff": "10:30:00",
                     "dropoff": "11:20:00",
                     "soldOut": false,
-                    "sellingOut": false,
+                    "sellingOut": true,
                     "isPastCutoff": true,
                     "isOrderPlaced": false
                 },
@@ -145,7 +145,7 @@
                     "logoUrl": "https://www.placehold.it/300X200",
                     "cutoff": "10:15:00",
                     "dropoff": "11:35:00",
-                    "soldOut": false,
+                    "soldOut": true,
                     "sellingOut": false,
                     "isPastCutoff": true,
                     "isOrderPlaced": false

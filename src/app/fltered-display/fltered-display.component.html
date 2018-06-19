@@ -1,18 +1,48 @@
+<ng-container *ngFor="let item of sampleJson">
+  <div *ngIf="item.day==activeDay" class="list-wrapper">
+    <ng-container *ngIf = "item.deliveries.length; else noDeliveries">
+      <div *ngFor="let del of item.deliveries" class="list-item">
 
-<ng-container *ngFor = "let item of sampleJson">
-<div *ngIf = "item.day==activeDay" class = "list-wrapper" >
-  <div *ngFor = "let del of item.deliveries" class="list-item">
-    <div class="img-wrapper">
-      <img src="{{del.logoUrl}}" alt="{{del.restaurantName}} logo">
-      <span class="logo-text">{{del.restaurantName}}</span>
-    </div>
-    <div class="info-wrapper">
+        <div class="img-wrapper">
+          <img src="{{del.logoUrl}}" alt="{{del.restaurantName}} logo">
+          <span class="logo-text">{{del.restaurantName}}</span>
+        </div>
+        <div class="info-wrapper">
+          <ng-container *ngIf="!del.soldOut; else soldOut">
+            <div class="info-row">
+              <p class="label">Order By: </p>
+              <div class="time-val">
+                <p>{{del.cutoff | slice:0:5}} A.M.</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <p class="label">Delivery Time: </p>
+              <div class="time-val">
+                <p>{{del.dropoff|slice:0:5}} A.M.</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <button type="button" class="select-rest">Select Restaruant</button>
+            </div>
+            <div class="info-row" *ngIf="del.sellingOut">
+              <p class="warning">Hurry! Only a few left!</p>
+            </div>
+          </ng-container>
+          <!-- {{del.soldOut}} -->
+        </div>
 
-
-    </div>
-
+      </div>
+    </ng-container>
   </div>
 
-</div>
-
 </ng-container>
+<ng-template #soldOut>
+  <div class="info-row sold-out">
+    <p>Sold Out!</p>
+    <p>This restaurant has hit maximum order capacity which is established to ensure quality.</p>
+  </div>
+
+</ng-template>
+<ng-template #noDeliveries>
+  <p class = "text-center">Sorry! No deliveries found!</p>
+</ng-template>

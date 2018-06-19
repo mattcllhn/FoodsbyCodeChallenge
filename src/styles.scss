@@ -3,13 +3,15 @@
 @import '/assets/variables';
 
 body{
-    color:#626366;
-    // background-color:#efefef;
+    color:$base-txt;
 }
 a{
-color: #626366;
+color:$base-txt;
     &:hover{
-        color:#00a5b3;
+        color:$link-green;
         text-decoration: none;
     }
+}
+p{
+    margin-bottom:0;
 }
