@@ -1,0 +1,21 @@
+.day-selector{
+    display:flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    width:100%;
+    margin:auto;
+    padding-left:0;
+    .day-selector__li{
+        flex:1 0 auto;
+    }
+}
+@media screen and (min-width:480px){
+    .day-selector{
+        width:80%
+    }
+}
+@media screen and (min-width:800px){
+    .day-selector{
+        width:50%
+    }
+}
