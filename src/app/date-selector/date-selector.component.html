@@ -1,3 +1,7 @@
-<p>
-  date-selector works!
-</p>
+<nav>
+  <ul class = "day-selector">
+    <li class = "day-selector__li" *ngFor="let day of displayDays; let i = index">
+      <a href="javascript:void(0)" (click) = "linkSelectEmitter(day)" >{{i===0?'Today':day}}</a>
+    </li>
+  </ul>
+</nav>
