@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   ngOnInit(){
   }
+  public daySelected;
   public setNewDay(e){
     console.log('day selected',e);
+    this.daySelected = e;
   }
 }
