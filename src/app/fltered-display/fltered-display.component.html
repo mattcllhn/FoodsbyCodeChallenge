@@ -12,13 +12,13 @@
             <div class="info-row">
               <p class="label">Order By: </p>
               <div class="time-val">
-                <p>{{del.cutoff | slice:0:5}} A.M.</p>
+                <p>{{formatTime(del.cutoff)}}</p>
               </div>
             </div>
             <div class="info-row">
               <p class="label">Delivery Time: </p>
               <div class="time-val">
-                <p>{{del.dropoff|slice:0:5}} A.M.</p>
+                <p>{{formatTime(del.dropoff) }}</p>
               </div>
             </div>
             <div class="info-row">
