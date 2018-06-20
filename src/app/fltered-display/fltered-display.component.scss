@@ -4,7 +4,7 @@
 .list-item{
     border-bottom:1px solid $primary-red;
     display:flex;
-    flex-flow:row nowrap;
+    flex-flow:row wrap;
     padding:1rem;
 
     &:last-of-type{
@@ -15,20 +15,25 @@
 
     }
     .img-wrapper{
-        flex:1 0 auto;
+        flex:1 1 auto;
         position:relative;
-        max-width:400px;
-        width:400px;
+        max-width:100%;
+        // width:400px;
         overflow: hidden;
 
         img{
-            opacity:.3;
+            opacity:.2;
             width:100%;
             height:auto;
+            // position:absolute;
+            // top:0;
+            // bottom:0;
+            // left:0;
+            // right:0;
         }
         span{
             position:absolute;
-            top:45%;
+            top:38%;
             left:0;
             right:0;
             text-align:center;    
@@ -36,10 +41,11 @@
         }
     }
     .info-wrapper{
-        flex: 3 0 auto;
+        flex: 2 0 auto;
         padding:1rem 3rem;
         flex-flow:column nowrap;
         padding-top:3rem;
+        max-width:100%;
 
         .info-row{
             margin:1rem 0;
@@ -69,15 +75,29 @@
                 text-align:center;
             }
             &.sold-out{
-                padding-top:3rem;
-                display:flex;
+                // padding-top:3rem;
                 flex-flow:column nowrap;
-                margin:auto;
+                align-items: center;
                 text-align:center;
-                max-width:40%;
+                p{
+                    max-width:100%;
+
+                }
                 
             }
         }
+
+    }
+}
+}
+@media screen and (min-width:800px){
+.list-wrapper .list-item{
+    flex-flow:row nowrap;
+    .img-wrapper{
+        max-width:300px;
+    }
+    .info-wrapper .info-row.sold-out p{
+        max-width:40%;
 
     }
 }
