@@ -25,7 +25,8 @@ export class FlteredDisplayComponent implements OnInit {
   @Input() activeDay: string;
   public sampleJson;
   public formatTime(timeIn) {
-    const timeStamp = new Date(`August 19, 1975 ${timeIn} GMT+00:00-5`);
+    const timezoneOffset = new Date(new Date()).getTimezoneOffset()/60;
+    const timeStamp = new Date(`August 19, 1975 ${timeIn} GMT+00:00-${timezoneOffset}`);
     const formattedTime = timeStamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     return formattedTime;
   }
