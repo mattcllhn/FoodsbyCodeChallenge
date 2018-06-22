@@ -1,7 +1,7 @@
 <ng-container *ngFor="let item of sampleJson">
-  <div *ngIf="item.day==activeDay" class="list-wrapper">
+  <div *ngIf="item.day==activeDay"   class="list-wrapper">
     <ng-container *ngIf = "item.deliveries.length; else noDeliveries">
-      <div *ngFor="let del of item.deliveries" class="list-item">
+      <div *ngFor="let del of item.deliveries"  [@fadeIn]="''" class="list-item">
         <div class="img-wrapper">
           <img src="{{del.logoUrl}}" alt="{{del.restaurantName}} logo">
           <span class="logo-text">{{del.restaurantName}}</span>
@@ -40,5 +40,5 @@
 
 </ng-template>
 <ng-template #noDeliveries>
-  <p class = "text-center">Sorry! No deliveries found!</p>
+  <p class = "text-center" [@fadeIn]="''" >Sorry! No deliveries found!</p>
 </ng-template>

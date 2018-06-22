@@ -1,22 +1,35 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { DataGetterService } from '../data-getter.service';
-
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 @Component({
   selector: 'app-fltered-display',
   templateUrl: './fltered-display.component.html',
   styleUrls: ['./fltered-display.component.scss'],
-  encapsulation: ViewEncapsulation.None
-  
+  encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms ease-out',
+          keyframes([
+            style({ opacity: 1})
+          ])
+        )
+      ])
+    ])
+
+  ]
+
 })
 export class FlteredDisplayComponent implements OnInit {
-@Input() activeDay:string;
+  @Input() activeDay: string;
   public sampleJson;
-  public formatTime(timeIn){
+  public formatTime(timeIn) {
     const timeStamp = new Date(`August 19, 1975 ${timeIn} GMT+00:00-5`);
     const formattedTime = timeStamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     return formattedTime;
   }
-  public selectRestaurant(name){
+  public selectRestaurant(name) {
     alert(`you have chosen ${name}`);
   }
   constructor(public service: DataGetterService) {
