@@ -12,9 +12,9 @@ export class DateSelectorComponent implements OnInit {
   constructor() { }
   private daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   public displayDays = [];
-  private currentDateObj = new Date(new Date());
-  private todayIndex = this.currentDateObj.getDay();
+  private todayIndex = new Date(new Date()).getDay();
   public selectedDay = this.daysOfWeek[this.todayIndex];
+  
   public buildDayArray(numIn){
     let dayIndex = numIn;
     for (let i = 0; i < 5; i++) {
