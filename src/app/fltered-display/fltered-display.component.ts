@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { DataGetterService } from '../data-getter.service';
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { trigger, style, animate, transition, keyframes } from '@angular/animations';
 @Component({
   selector: 'app-fltered-display',
   templateUrl: './fltered-display.component.html',
